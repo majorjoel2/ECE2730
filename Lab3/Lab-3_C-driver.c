@@ -10,9 +10,9 @@ int main(int argc, char **argv)
 	scanf("%d",&j);
 	printf("Enter the size of triangle side 3 -> ");
 	scanf("%d",&k);
-	
+
 	classify();
-	
+
 	switch(tri_type)
 	{
 		case 0:

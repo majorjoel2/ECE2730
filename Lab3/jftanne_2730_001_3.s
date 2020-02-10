@@ -21,11 +21,11 @@ classify:
 
   /* put code here */
   # if ( i == 0 || j == 0 || k == 0)
-  cmpl i, $0
+  cmpl $0, i
   je L00
-  cmpl j, $0
+  cmpl $0, j
   je L00
-  cmpl k, $0
+  cmpl $0, k
   je L00
   jmp L01;
 
@@ -62,7 +62,7 @@ L04:
   movl i, %eax
   addl j, %eax
   cmpl %eax, k
-  jg L05
+  jl L05
   movl $0, tri_type
   jmp return
 
@@ -70,7 +70,7 @@ L05:
   movl k, %eax
   addl j, %eax
   cmpl %eax, i
-  jg L06
+  jl L06
   movl $0, tri_type
   jmp return
 
@@ -78,7 +78,7 @@ L06:
   movl k, %eax
   addl i, %eax
   cmpl %eax, j
-  jg L07
+  jl L07
   movl $0, tri_type
   jmp return
 
@@ -100,7 +100,7 @@ L09:
   movl i, %eax
   addl j, %eax
   cmpl %eax, k
-  jg L10
+  jl L10
   movl $0, tri_type
   jmp return
 
@@ -111,7 +111,7 @@ L10:
   movl i, %eax
   addl k, %eax
   cmpl %eax, j
-  jg L11
+  jl L11
   movl $0, tri_type
   jmp return
 
@@ -122,7 +122,7 @@ L11:
   movl j, %eax
   addl k, %eax
   cmpl %eax, i
-  jg L12
+  jl L12
   movl $0, tri_type
   jmp return
 
