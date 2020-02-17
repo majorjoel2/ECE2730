@@ -15,7 +15,7 @@ int main(int argc, char **argv)
   ascii = input;
   intptr = &output;
   /* this is the function we will write in assembly */
-  AtoI2();
+  AtoI();
   printf("\nASCII is: %s\nInteger is: %d\n",input,output);
   return 0;
 }
@@ -37,6 +37,7 @@ void AtoI2()
   }
   *intptr = 0; /* stores the value calculated below */
   /* skip to the ones place of the digit */
+  //%edi incrememting register
   for(i = 0; ascii[i] >= '0' && ascii[i] <= '9'; i++);
   i--; /* back up to the ones place */
   multiplier = 1; /* set multiplier for ones place */
