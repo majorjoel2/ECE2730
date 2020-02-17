@@ -11,6 +11,17 @@ AtoI:
   pushl %edi
 
   /* put code here */
+  movl $1, sign
+  movl $0, %ebx
+
+L00:
+  cmpl $32, ascii(; %ebx, 4)
+  jne L01
+  cmpl $9, ascii(; %ebx, 4)
+  jne L01
+  addl $1, %ebx
+
+L01:
 
 return:
   /* epilog */
@@ -20,5 +31,7 @@ return:
   movl %ebp, %esp
   popl %ebp
   ret
+
+.comm ascii, 40
 
 /* end assembly stub */
