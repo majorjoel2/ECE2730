@@ -12,30 +12,29 @@ Factorial:
 	pushl %ebx
 	pushl %ebp
 	movl %esp, %ebp
-	subl $4, %esp
 
 	/* put code here */
-	cmpl $0, -4(%ebp)
+	cmpl $0, 12(%ebp)
 	jne L01
 	movl $1, %eax
 	jmp return
 
 L01:
-	cmpl $1, -4(%ebp)
+	cmpl $1, 12(%ebp)
 	jne L02
 	movl $1, %eax
 	jmp return
 
 L02:
 	#return n * Factorial(n-1);
-	movl -4(%ebp), %ebx
+	movl 12(%ebp), %ebx
 	subl $1, %ebx
 	#pass in n-1
 	pushl %ebx
 	call Factorial
 	addl $4, %esp
 	#function output in %eax
-	movl -4(%ebp), %ebx
+	movl 12(%ebp), %ebx
 	mull %ebx
 
 	return:
