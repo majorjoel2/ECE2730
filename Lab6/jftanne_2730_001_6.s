@@ -1,8 +1,21 @@
-/* put program header here */
-
+/*
+NAME    Joel Tanner
+COURSE  ECE 2730
+SECTION  001
+DATE    04/06/2020
+FILE    jftanne_2730_001_5.s
+PURPOSE  This file will calculate the factorial of a given number with a
+				 recursive assembly function.
+*/
 /* begin assembly stub */
 
-/* put function header here */
+/*
+FUNCTION     Factorial
+ARGUMENTS    A positive integer number n.
+RETURNS      A positive integer !n
+PURPOSE      This function returns the factorial of the input with a recursive
+						 n * (n-1) method to multiply all the numbers together until n=1.
+*/
 
 /* put assembler directives here */
 .globl Factorial
